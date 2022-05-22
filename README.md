@@ -2,7 +2,7 @@
 # Film Project
 
 The Film Project is a web service that interacts with a database to serve the data to clients
-who request data.
+who request data. This project was created by Thomas Rogers for MUU web services assignment
 
 ## Deployment - Azure
 1.  Create a resource group for the project
