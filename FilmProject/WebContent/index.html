@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page styles -->
+    <link rel="stylesheet" href="https://bootswatch.com/5/lux/bootstrap.css">
+    
+	<link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+    integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+    crossorigin="anonymous"
+  />
+  
+    <link rel="stylesheet" href="https://bootswatch.com/_vendor/prismjs/themes/prism-okaidia.css">
+    <link rel="stylesheet" href="https://bootswatch.com/_assets/css/custom.min.css">
+    <!-- DataTables styles -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="/style.css">
+    <title>Home page</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card border-primary mb-3">
+                    <div class="card-header">Web Interface</div>
+                    <div class="card-body">
+                      <p class="card-text">In this view you have access to the data using simple http web service calls with CRUD implemented, interfacing with a MySQL database. This is done with HTML forms being submitted to specific servlets using the 'action' attribute on the form tags.</p>
+                      <h4 class="card-title"><a href="/FilmProject/webInterface" class="text-info">Go to Web Interface <i class="fas fa-arrow-right"></i></a></h4>
+                    </div>
+                  </div>
+            </div>
+            <div class="col">
+                <div class="card border-primary mb-3">
+                    <div class="card-header">AJAX Testing</div>
+                    <div class="card-body">
+                      <p class="card-text">In this view you have access to the data using REST type interaction. Data transactions are sent in a RESTful way for all CRUD operations. This includes options to return the data in json (the default), xml or text. Built with a similar  UI to postman.</p>
+                      <h4 class="card-title"><a href="/FilmProject/ajaxTestInterface.html" class="text-info">AJAX Testing <i class="fas fa-arrow-right"></i></a></h4>
+                    </div>
+                  </div>
+            </div>
+            <div class="col">
+                <div class="card border-primary mb-3">
+                    <div class="card-header">AJAX Interface</div>
+                    <div class="card-body">
+                      <p class="card-text">In this view you have access to the data using REST type interaction to an API with CRUD implemented, interfacing with a MySQL database. The API calls are done with an AJAX library. The data is presented in the UI with the assistance of JQuery Plug-ins</p>
+                      <h4 class="card-title"><a href="/FilmProject/ajaxInterface.html" class="text-info">AJAX Interface <i class="fas fa-arrow-right"></i></a></h4>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
