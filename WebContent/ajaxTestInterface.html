@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page styles -->
+    <link rel="stylesheet" href="https://bootswatch.com/5/lux/bootstrap.css">
+    <link rel="stylesheet" href="https://bootswatch.com/_vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/_vendor/prismjs/themes/prism-okaidia.css">
+    <link rel="stylesheet" href="https://bootswatch.com/_assets/css/custom.min.css">
+    <!-- DataTables styles -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="/FilmProject/styles/style.css">
+    <title>AJAX Testing Interface</title>
+</head>
+<body>
+    <div class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+        <div class="container">
+          <a href="/FilmProject" class="navbar-brand">FilmDB</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav">
+            	<li class="nav-item"><a href="/FilmProject/webInterface" class="nav-link">Web Interface</a></li>
+                <li class="nav-item"><a href="/FilmProject/ajaxTestInterface.html" class="nav-link">AJAX Testing</a></li>
+                <li class="nav-item"><a href="/FilmProject/ajaxInterface.html" class="nav-link">AJAX Interface</a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+    
+    <div class="container">
+    	<h1 style="text-transform: none;">Ajax testing interface</h1>
+    	<p>In this view you have access to the data using REST type interaction. Data transactions are sent in a RESTful way for all CRUD operations. This includes options to return the data in json (the default), xml or text.</p>
+    	<hr>
+    	<div class="input-group mb-3">
+		  <div class="input-group-prepend">
+			<select name="method" id="methodSelect" style="height: 100%;">
+				<option value="get">GET</option>
+				<option value="post">POST</option>
+				<option value="put">PUT</option>
+				<option value="delete">DELETE</option>
+			</select>
+		  </div>
+		  <div class="input-group-prepend">
+		  	<div class="input-group-text" id="basic-addon3">http://localhost:8080/FilmProject/Films<span id="FilmID">?FilmID=</span></div>
+		  </div>
+		  <input type="text" class="form-control" id="idInput" aria-describedby="basic-addon3">
+		  <div class="input-group-append">
+    		<select name="acceptFormat" id="acceptFormat" style="height: 100%;">
+				<option value="application/json">JSON</option>
+				<option value="text/xml">XML</option>
+				<option value="text/plain">Text</option>
+			</select>
+			<button id="sendRequest" class="btn btn-success" type="button" style="margin-top: -3px;">Send</button>
+  		  </div>
+		</div>
+		
+		<div id="inputFormDiv" class="border p-4 mb-4" style="opacity: 0; height: 0px; pointer-events: none; transition: all .7s;">
+			<p class="text-center" style="margin-bottom: -15px">For your chosen method, extra details are required.</p>
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+						<label class="col-form-label mt-4" for="contentType">Content-Type header (format you want to send the data in)</label>
+						<select name="contentType" id="contentType" class="form-select">
+					    	<option value="application/json">JSON</option>
+					        <option value="text/xml">XML</option>
+						</select>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col">
+					<div class="form-group">
+		                <label class="col-form-label mt-4" for="PostFilmID">Film ID</label>
+		                <input type="text" class="form-control" placeholder="Film ID" id="PostFilmId" name="PostFilmID" disabled>
+		            </div>
+				</div>
+				
+				<div class="col">
+					<div class="form-group">
+		                <label class="col-form-label mt-4" for="PostFilmTitle">Film Title</label>
+		                <input type="text" class="form-control" placeholder="Film Title" id="PostFilmTitle" name="PostFilmTitle" required>
+		            </div>
+				</div>
+				
+				<div class="col">
+		            <div class="form-group">
+		                <label class="col-form-label mt-4" for="PostFilmYear">Film Year</label>
+		                <input type="number" class="form-control" placeholder="Film Year" id="PostFilmYear" name="PostFilmYear" required>
+		            </div>
+	            </div>
+			</div>
+			
+			<div class="row">
+				<div class="col">
+		            <div class="form-group">
+		                <label class="col-form-label mt-4" for="PostFilmDirector">Film Director</label>
+		                <input type="text" class="form-control" placeholder="Film Director" id="PostFilmDirector" name="PostFilmDirector" required>
+		            </div>
+	            </div>
+	
+				<div class="col">
+		            <div class="form-group">
+		                <label class="col-form-label mt-4" for="PostFilmStars">Film Stars</label>
+		                <input type="text" class="form-control" placeholder="Film Stars" id="PostFilmStars" name="PostFilmStars" required>
+		            </div>
+	            </div>
+			</div>
+
+            <div class="form-group">
+            	<label class="col-form-label mt-4" for="PostFilmReview">Film Review</label>
+			 	<textarea class="form-control" placeholder="Film Review" id="PostFilmReview" name="PostFilmReview" rows="4" required></textarea>
+			</div>
+		</div>
+		
+		<div id="outputDiv" style="opacity: 0; transition: all .3s; pointer-events: none;">
+			<h5>Output</h5>
+			<textarea id="outputBox" readonly="readonly" class="form-control" id="exampleTextarea" style="height: 370px;"></textarea>
+		</div>
+
+		
+    </div>
+    <div class="container">
+        <footer id="footer">
+            <div class="row">
+              <div class="col-lg-12">
+                <ul class="list-unstyled">
+                  <li class="float-end"><a href="#top">Back to top</a></li>
+                  <li><a href="/FilmProject/webInterface">Web Interface</a></li>
+                  <li><a href="/FilmProject/ajaxTestInterface.html">AJAX Testing</a></li>
+                  <li><a href="/FilmProject/ajaxInterface.html">AJAX Interface</a></li>
+                </ul>
+                <p>Made by <span class="text-info">Thomas Rogers</a>.</span></p>
+                <p>Code developed for MMU <span class="text-info">Web Services Assignment</span>.</p>
+    
+              </div>
+            </div>
+          </footer>
+    </div>
+    
+    <!-- Import the ajax libary for GET, POST, PUT and DELETE requests -->
+    <script src="/FilmProject/scripts/ajaxLibrary.js"></script>
+    <!-- Page specific js -->
+    <script src="/FilmProject/scripts/ajaxTestInterface.js"></script>
+</body>
+</html>

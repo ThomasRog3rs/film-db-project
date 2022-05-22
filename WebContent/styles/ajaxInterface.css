@@ -1,0 +1,7 @@
+table > *{
+	user-select: none;
+}
+
+table > *:hover{
+	cursor: pointer;
+}

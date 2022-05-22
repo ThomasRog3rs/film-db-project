@@ -1,0 +1,12 @@
+.navbar-brand{
+    text-transform: none;
+}
+
+#filmsTables_length{
+    margin-bottom: 20px;
+}
+
+footer#footer{
+    border-top: 2px solid;
+    padding-top: 20px;
+}
