@@ -18,7 +18,7 @@ who request data. This project was created by Thomas Rogers for MUU web services
 
 ### My live application
 
-[https://filmproject.azurewebsites.net](https://filmwebservice.azurewebsites.net/)
+[https://filmwebservice.azurewebsites.net](https://filmwebservice.azurewebsites.net/)
 
 ### API Endpoints
 #### GET
