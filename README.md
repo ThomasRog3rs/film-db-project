@@ -16,7 +16,7 @@ who request data. This project was created by Thomas Rogers for MUU web services
 1.  Select your App Service and deploy.
 1.  Check it out at https://{appServiceName}.azurewebsites.net
 
-### My live application
+### My live application (no longer live)
 
 [https://filmwebservice.azurewebsites.net](https://filmwebservice.azurewebsites.net/)
 
