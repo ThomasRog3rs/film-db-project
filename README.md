@@ -33,3 +33,6 @@ URL/Films - takes in a body of a film object and returns a success or error mess
 
 #### DELETE
 URL/Films?FilmID=10001 - returns success or error message
+
+### Project Critical Analysis
+[Report](https://1drv.ms/w/s!Apuzvs_WyaRmhqwnuJ15fu_rahuwDg?e=SlVbTL)
